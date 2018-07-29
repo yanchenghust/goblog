@@ -4,7 +4,7 @@ import "github.com/yanchenghust/goblog/log"
 
 var logger *log.Log
 
-func InitLog(){
+func InitLog() {
 	fp := log.NewFileProvider("/www/log/blog")
 	logger = log.NewLog(log.LvlDebug, fp)
 	cl := log.NewConsoleProvider()
@@ -12,15 +12,13 @@ func InitLog(){
 	logger.Start()
 }
 
-
-func StopLog(){
+func StopLog() {
 	logger.Stop()
 }
 
 func Warnf(format string, args ...interface{}) {
 	logger.Warnf(format, args...)
 }
-
 
 func Errorf(format string, args ...interface{}) {
 	logger.Errorf(format, args...)

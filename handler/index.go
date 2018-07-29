@@ -1,14 +1,13 @@
 package handler
 
 import (
-	"net/http"
 	"fmt"
-	"html"
 	"github.com/yanchenghust/goblog/init/log"
+	"html"
+	"net/http"
 )
 
 type IndexHandler struct {
-
 }
 
 func (h IndexHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -17,4 +16,3 @@ func (h IndexHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, key is %q", html.EscapeString(r.Form.Get("key")))
 	log.Infof("Hello, key is %q", html.EscapeString(r.Form.Get("key")))
 }
-
